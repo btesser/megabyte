@@ -2,7 +2,680 @@ $iconSpritePath: "../images/glyphicons-halflings.png";
 $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
 
 @import "bootstrap-sass/lib/bootstrap";
+/* /!\ You need to add vendor prefixes in order to render the CSS properly (or simply use http://leaverou.github.io/prefixfree/) /!\ */
 
+#tridiv {
+  perspective: 800px;
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  font-size: 87.5%;
+}
+
+.face {
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.4);
+}
+
+.scene, .shape, .face, .face-wrapper, .cr {
+  position: absolute;
+  transform-style: preserve-3d;
+}
+
+.scene {
+  width: 80em;
+  height: 80em;
+  top: 0%;
+  left: 0%; /* /!\ You need to add vendor prefixes in order to render the CSS properly (or simply use http://leaverou.github.io/prefixfree/) /!\ */
+
+  #tridiv {
+    perspective: 800px;
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    font-size: 87.5%;
+  }
+
+  .face {
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.4);
+  }
+
+  .scene, .shape, .face, .face-wrapper, .cr {
+    position: absolute;
+    transform-style: preserve-3d;
+  }
+
+  .scene {
+    width: 80em;
+    height: 80em;
+    top: 50%;
+    left: 50%;
+    margin: -40em 0 0 -40em;
+  }
+
+  .shape {
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    transform-origin: 50%;
+  }
+
+  .face, .face-wrapper {
+    overflow: hidden;
+    transform-origin: 0 0;
+    backface-visibility: hidden;
+    /* hidden by default, prevent blinking and other weird rendering glitchs */
+  }
+
+  .face {
+    background-size: 100% 100% !important;
+    background-position: center;
+  }
+
+  .face-wrapper .face {
+    left: 100%;
+    width: 100%;
+    height: 100%;
+  }
+
+  .photon-shader {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .side {
+    left: 50%;
+  }
+
+  .cr {
+    height: 100%;
+    .side {
+      height: 100%;
+    }
+  }
+
+  [class*="prism"] {
+    .ft {
+      width: 100%;
+      height: 100%;
+    }
+    .bk {
+      width: 100%;
+      height: 100%;
+      left: 100%;
+    }
+    .rt {
+      transform: rotateY(-90deg) translateX(-50%);
+    }
+    .lt {
+      transform: rotateY(90deg) translateX(-50%);
+    }
+    .bm {
+      transform: rotateX(-90deg) translateY(-50%);
+    }
+    .lt {
+      left: 100%;
+    }
+    .bm {
+      top: 100%;
+    }
+    .rt .face {
+      left: -100%;
+      transform-origin: 100% 0;
+    }
+  }
+
+  [class*="cuboid"] {
+    .ft {
+      width: 100%;
+      height: 100%;
+    }
+    .bk {
+      width: 100%;
+      height: 100%;
+      left: 100%;
+    }
+    .rt {
+      transform: rotateY(-90deg) translateX(-50%);
+    }
+    .lt {
+      transform: rotateY(90deg) translateX(-50%);
+    }
+    .tp {
+      transform: rotateX(90deg) translateY(-50%);
+    }
+    .bm {
+      transform: rotateX(-90deg) translateY(-50%);
+    }
+    .lt {
+      left: 100%;
+    }
+    .bm {
+      top: 100%;
+    }
+  }
+
+  /* .pri-1 styles */
+
+  .pri-1 {
+    transform: translate3D(0em, -0.5em, 0em) rotateX(90deg) rotateY(0deg) rotateZ(0deg);
+    opacity: 1;
+    width: 50em;
+    height: 4em;
+    margin: -2em 0 0 -25em;
+    .rt .face {
+      transform: rotateZ(-45.0deg);
+    }
+    .lt .face {
+      transform: rotateZ(45.0deg);
+    }
+    .ft {
+      height: 5.656854249492381em;
+      transform: translateZ(-2em) rotateX(45.0deg);
+    }
+    .bk {
+      transform: translateZ(-2em) rotateY(180deg);
+    }
+    .rt, .lt {
+      width: 4em;
+      height: 4em;
+    }
+    .rt .face, .lt .face {
+      height: 5.656854249492381em;
+    }
+    .bm {
+      width: 50em;
+      height: 4em;
+    }
+    .face {
+      background-color: #FFFFFF;
+    }
+  }
+
+  /* .cub-1 styles */
+
+  .cub-1 {
+    transform: translate3D(0em, 18em, -13em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    opacity: 1;
+    width: 50em;
+    height: 30em;
+    margin: -15em 0 0 -25em;
+    .ft {
+      transform: translateZ(15em);
+    }
+    .bk {
+      transform: translateZ(-15em) rotateY(180deg);
+    }
+    .rt, .lt {
+      width: 30em;
+      height: 30em;
+    }
+    .tp, .bm {
+      width: 50em;
+      height: 30em;
+    }
+    .face {
+      background-color: #FFFFFF;
+    }
+  }
+
+  /* .cub-2 styles */
+
+  .cub-2 {
+    transform: translate3D(0em, -4em, -13em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    opacity: 1;
+    width: 50em;
+    height: .25em;
+    margin: -0.125em 0 0 -25em;
+    .ft {
+      transform: translateZ(15em);
+    }
+    .bk {
+      transform: translateZ(-15em) rotateY(180deg);
+    }
+    .rt, .lt {
+      width: 30em;
+      height: .25em;
+    }
+    .tp, .bm {
+      width: 50em;
+      height: 30em;
+    }
+    .face {
+      background-color: #FFFFFF;
+    }
+  }
+  /* /!\ You need to add vendor prefixes in order to render the CSS properly (or simply use http://leaverou.github.io/prefixfree/) /!\ */
+
+  #tridiv {
+    perspective: 800px;
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    font-size: 87.5%;
+  }
+
+  .face {
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.4);
+  }
+
+  .scene, .shape, .face, .face-wrapper, .cr {
+    position: absolute;
+    transform-style: preserve-3d;
+  }
+
+  .scene {
+    width: 80em;
+    height: 80em;
+    top: 50%;
+    left: 50%;
+    margin: -40em 0 0 -40em;
+  }
+
+  .shape {
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    transform-origin: 50%;
+  }
+
+  .face, .face-wrapper {
+    overflow: hidden;
+    transform-origin: 0 0;
+    backface-visibility: hidden;
+    /* hidden by default, prevent blinking and other weird rendering glitchs */
+  }
+
+  .face {
+    background-size: 100% 100% !important;
+    background-position: center;
+  }
+
+  .face-wrapper .face {
+    left: 100%;
+    width: 100%;
+    height: 100%;
+  }
+
+  .photon-shader {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .side {
+    left: 50%;
+  }
+
+  .cr {
+    height: 100%;
+    .side {
+      height: 100%;
+    }
+  }
+
+  [class*="prism"] {
+    .ft {
+      width: 100%;
+      height: 100%;
+    }
+    .bk {
+      width: 100%;
+      height: 100%;
+      left: 100%;
+    }
+    .rt {
+      transform: rotateY(-90deg) translateX(-50%);
+    }
+    .lt {
+      transform: rotateY(90deg) translateX(-50%);
+    }
+    .bm {
+      transform: rotateX(-90deg) translateY(-50%);
+    }
+    .lt {
+      left: 100%;
+    }
+    .bm {
+      top: 100%;
+    }
+    .rt .face {
+      left: -100%;
+      transform-origin: 100% 0;
+    }
+  }
+
+  [class*="cuboid"] {
+    .ft {
+      width: 100%;
+      height: 100%;
+    }
+    .bk {
+      width: 100%;
+      height: 100%;
+      left: 100%;
+    }
+    .rt {
+      transform: rotateY(-90deg) translateX(-50%);
+    }
+    .lt {
+      transform: rotateY(90deg) translateX(-50%);
+    }
+    .tp {
+      transform: rotateX(90deg) translateY(-50%);
+    }
+    .bm {
+      transform: rotateX(-90deg) translateY(-50%);
+    }
+    .lt {
+      left: 100%;
+    }
+    .bm {
+      top: 100%;
+    }
+  }
+
+  /* .pri-1 styles */
+
+  .pri-1 {
+    transform: translate3D(0em, -0.5em, 0em) rotateX(90deg) rotateY(0deg) rotateZ(0deg);
+    opacity: 1;
+    width: 50em;
+    height: 4em;
+    margin: -2em 0 0 -25em;
+    .rt .face {
+      transform: rotateZ(-45.0deg);
+    }
+    .lt .face {
+      transform: rotateZ(45.0deg);
+    }
+    .ft {
+      height: 5.656854249492381em;
+      transform: translateZ(-2em) rotateX(45.0deg);
+    }
+    .bk {
+      transform: translateZ(-2em) rotateY(180deg);
+    }
+    .rt, .lt {
+      width: 4em;
+      height: 4em;
+    }
+    .rt .face, .lt .face {
+      height: 5.656854249492381em;
+    }
+    .bm {
+      width: 50em;
+      height: 4em;
+    }
+    .face {
+      background-color: #FFFFFF;
+    }
+  }
+
+  /* .cub-1 styles */
+
+  .cub-1 {
+    transform: translate3D(0em, 18em, -13em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    opacity: 1;
+    width: 50em;
+    height: 30em;
+    margin: -15em 0 0 -25em;
+    .ft {
+      transform: translateZ(15em);
+    }
+    .bk {
+      transform: translateZ(-15em) rotateY(180deg);
+    }
+    .rt, .lt {
+      width: 30em;
+      height: 30em;
+    }
+    .tp, .bm {
+      width: 50em;
+      height: 30em;
+    }
+    .face {
+      background-color: #FFFFFF;
+    }
+  }
+
+  /* .cub-2 styles */
+
+  .cub-2 {
+    transform: translate3D(0em, -4em, -13em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    opacity: 1;
+    width: 50em;
+    height: .25em;
+    margin: -0.125em 0 0 -25em;
+    .ft {
+      transform: translateZ(15em);
+    }
+    .bk {
+      transform: translateZ(-15em) rotateY(180deg);
+    }
+    .rt, .lt {
+      width: 30em;
+      height: .25em;
+    }
+    .tp, .bm {
+      width: 50em;
+      height: 30em;
+    }
+    .face {
+      background-color: #FFFFFF;
+    }
+  }
+  margin: 0 auto;
+}
+
+.shape {
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  transform-origin: 50%;
+}
+
+.face, .face-wrapper {
+  overflow: hidden;
+  transform-origin: 0 0;
+  backface-visibility: hidden;
+  /* hidden by default, prevent blinking and other weird rendering glitchs */
+}
+
+.face {
+  background-size: 100% 100% !important;
+  background-position: center;
+}
+
+.face-wrapper .face {
+  left: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.photon-shader {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.side {
+  left: 50%;
+}
+
+.cr {
+  height: 100%;
+  .side {
+    height: 100%;
+  }
+}
+
+[class*="prism"] {
+  .ft {
+    width: 100%;
+    height: 100%;
+  }
+  .bk {
+    width: 100%;
+    height: 100%;
+    left: 100%;
+  }
+  .rt {
+    transform: rotateY(-90deg) translateX(-50%);
+  }
+  .lt {
+    transform: rotateY(90deg) translateX(-50%);
+  }
+  .bm {
+    transform: rotateX(-90deg) translateY(-50%);
+  }
+  .lt {
+    left: 100%;
+  }
+  .bm {
+    top: 100%;
+  }
+  .rt .face {
+    left: -100%;
+    transform-origin: 100% 0;
+  }
+}
+
+[class*="cuboid"] {
+  .ft {
+    width: 100%;
+    height: 100%;
+  }
+  .bk {
+    width: 100%;
+    height: 100%;
+    left: 100%;
+  }
+  .rt {
+    transform: rotateY(-90deg) translateX(-50%);
+  }
+  .lt {
+    transform: rotateY(90deg) translateX(-50%);
+  }
+  .tp {
+    transform: rotateX(90deg) translateY(-50%);
+  }
+  .bm {
+    transform: rotateX(-90deg) translateY(-50%);
+  }
+  .lt {
+    left: 100%;
+  }
+  .bm {
+    top: 100%;
+  }
+}
+
+/* .pri-1 styles */
+
+.pri-1 {
+  transform: translate3D(0em, -0.5em, 0em) rotateX(90deg) rotateY(0deg) rotateZ(0deg);
+  opacity: 1;
+  width: 50em;
+  height: 4em;
+  margin: -2em 0 0 -25em;
+  .rt .face {
+    transform: rotateZ(-45.0deg);
+  }
+  .lt .face {
+    transform: rotateZ(45.0deg);
+  }
+  .ft {
+    height: 5.656854249492381em;
+    transform: translateZ(-2em) rotateX(45.0deg);
+  }
+  .bk {
+    transform: translateZ(-2em) rotateY(180deg);
+  }
+  .rt, .lt {
+    width: 4em;
+    height: 4em;
+  }
+  .rt .face, .lt .face {
+    height: 5.656854249492381em;
+  }
+  .bm {
+    width: 50em;
+    height: 4em;
+  }
+  .face {
+    background-color: #FFFFFF;
+  }
+}
+
+/* .cub-1 styles */
+
+.cub-1 {
+  transform: translate3D(0em, 18em, -13em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  opacity: 1;
+  width: 50em;
+  height: 30em;
+  margin: -15em 0 0 -25em;
+  .ft {
+    transform: translateZ(15em);
+  }
+  .bk {
+    transform: translateZ(-15em) rotateY(180deg);
+  }
+  .rt, .lt {
+    width: 30em;
+    height: 30em;
+  }
+  .tp, .bm {
+    width: 50em;
+    height: 30em;
+  }
+  .face {
+    background-color: #FFFFFF;
+  }
+}
+
+/* .cub-2 styles */
+
+.cub-2 {
+  transform: translate3D(0em, -4em, -13em) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  opacity: 1;
+  width: 50em;
+  height: .25em;
+  margin: -0.125em 0 0 -25em;
+  .ft {
+    transform: translateZ(15em);
+  }
+  .bk {
+    transform: translateZ(-15em) rotateY(180deg);
+  }
+  .rt, .lt {
+    width: 30em;
+    height: .25em;
+  }
+  .tp, .bm {
+    width: 50em;
+    height: 30em;
+  }
+  .face {
+    background-color: #FFFFFF;
+  }
+}
 /* Put your CSS here */
 html, body {
   margin: 20px;
