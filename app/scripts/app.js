@@ -7,7 +7,7 @@ angular.module('megabyteApp', [])
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/web-development', {
+      .when('/websites', {
         templateUrl: 'views/web-development.html',
         controller: 'WebDevelopmentCtrl'
       })
@@ -26,6 +26,10 @@ angular.module('megabyteApp', [])
       .when('/music', {
         templateUrl: 'views/music.html',
         controller: 'MusicCtrl'
+      })
+      .when('/about', {
+        templateUrl: 'views/about.html',
+        controller: 'AboutCtrl'
       })
       .otherwise({
         redirectTo: '/'

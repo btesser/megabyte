@@ -4,6 +4,14 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
 @import "bootstrap-sass/lib/bootstrap";
 /* /!\ You need to add vendor prefixes in order to render the CSS properly (or simply use http://leaverou.github.io/prefixfree/) /!\ */
 
+body{
+  background: black;
+}
+nav ul li, nav ul {
+  display: inline;
+  list-style: none;
+  padding: 0 5px;
+}
 #tridiv {
   perspective: 800px;
   position: absolute;
@@ -57,7 +65,7 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
   }
 
   .shape {
-    top: 50%;
+    top: 10%;
     left: 50%;
     width: 0;
     height: 0;
@@ -282,7 +290,7 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
   }
 
   .shape {
-    top: 50%;
+    top: 10%;
     left: 50%;
     width: 0;
     height: 0;
@@ -481,7 +489,7 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
 }
 
 .shape {
-  top: 50%;
+  top: 10%;
   left: 50%;
   width: 0;
   height: 0;
@@ -649,7 +657,10 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
     background-color: #FFFFFF;
   }
 }
-
+.photon-shader{
+  box-sizing: border-box;
+  padding:5px;
+}
 /* .cub-2 styles */
 
 .cub-2 {
@@ -682,7 +693,7 @@ html, body {
 }
 
 body {
-    background: #fafafa;
+    background: black;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #333;
 }
@@ -702,4 +713,8 @@ body {
     font-size: 60px;
     line-height: 1;
     letter-spacing: -1px;
+}
+.scene > div {
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
 }

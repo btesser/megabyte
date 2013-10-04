@@ -1,1 +1,16 @@
-<p>This is the web-development view.</p>
+<h1>
+    {{ active[activeNum].name }}
+</h1>
+
+<div class="row-fluid">
+    <div class="span8" style="height:100%">
+        <iframe ng-show="active[activeNum].url" ng-src="{{active[activeNum].url}}" style="height: 100%;"
+                frameborder="0">
+
+        </iframe>
+        <img ng-src="{{active[activeNum].screenshot}}" ng-show="active[activeNum].screenshot" style="height:100%"/>
+    </div>
+    <div class="span4">
+        {{ active[activeNum].description }}
+    </div>
+</div>
