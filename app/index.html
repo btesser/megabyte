@@ -29,9 +29,10 @@
 <script src="bower_components/es5-shim/es5-shim.js"></script>
 <script src="bower_components/json3/lib/json3.min.js"></script>
 <![endif]-->
-<div class="row-fluid text-center">
-    <img src="images/logo.png" alt=""/>
-</div>
+<three></three>
+<!--<div class="row-fluid text-center">-->
+    <!--<img src="images/logo.png" alt=""/>-->
+<!--</div>-->
 <!-- Add your site or application content here -->
 <div id="tridiv">
     <div class="scene"
@@ -82,7 +83,11 @@
                 </div>
             </div>
             <div class="face bk">
-                <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.239216);"></div>
+              <div class="photon-shader row-fluid" style="background-color: rgba(255, 255, 255, 0.137255);">
+                <div class="container row-fluid" ng-view="">
+
+                </div>
+              </div>
             </div>
             <div class="face rt">
                 <div class="photon-shader" style="background-color: rgba(0, 0, 0, 0.0588235);"></div>
@@ -155,6 +160,36 @@
 <script src="bower_components/bootstrap-sass/js/bootstrap-scrollspy.js"></script>
 <script src="bower_components/bootstrap-sass/js/bootstrap-collapse.js"></script>
 <script src="bower_components/bootstrap-sass/js/bootstrap-tab.js"></script>
+<script src="bower_components/threejs/build/three.js"></script>
+<script src="scripts/libraries/threejs/three.min.js"></script>
+
+<script src="scripts/libraries/threejs/ConvolutionShader.js"></script>
+<script src="scripts/libraries/threejs/CopyShader.js"></script>
+<script src="scripts/libraries/threejs/FilmShader.js"></script>
+<script src="scripts/libraries/threejs/FXAAShader.js"></script>
+
+<script src="scripts/libraries/threejs/EffectComposer.js"></script>
+<script src="scripts/libraries/threejs/RenderPass.js"></script>
+<script src="scripts/libraries/threejs/ShaderPass.js"></script>
+<script src="scripts/libraries/threejs/MaskPass.js"></script>
+<script src="scripts/libraries/threejs/BloomPass.js"></script>
+<script src="scripts/libraries/threejs/FilmPass.js"></script>
+
+<script src="scripts/libraries/threejs/Detector.js"></script>
+<script src="scripts/libraries/threejs/stats.min.js"></script>
+<script src="scripts/libraries/lily_script_one_regular.typeface.js"></script>
+<script src="scripts/libraries/poiret_one_regular.typeface.js"></script>
+<script src="scripts/libraries/threejs/gentilis_bold.typeface.js"></script>
+<script src="scripts/libraries/threejs/gentilis_regular.typeface.js"></script>
+<script src="scripts/libraries/threejs/optimer_bold.typeface.js"></script>
+<script src="scripts/libraries/threejs/optimer_regular.typeface.js"></script>
+<script src="scripts/libraries/threejs/helvetiker_bold.typeface.js"></script>
+<script src="scripts/libraries/threejs/helvetiker_regular.typeface.js"></script>
+<script src="scripts/libraries/threejs/droid_sans_regular.typeface.js"></script>
+<script src="scripts/libraries/threejs/droid_sans_bold.typeface.js"></script>
+<script src="scripts/libraries/threejs/droid_serif_regular.typeface.js"></script>
+<script src="scripts/libraries/threejs/droid_serif_bold.typeface.js"></script>
+
 <!-- endbuild -->
 
 <!-- build:js scripts/modules.js -->
@@ -172,6 +207,7 @@
 <script src="scripts/controllers/contact.js"></script>
 <script src="scripts/controllers/music.js"></script>
 <script src="scripts/controllers/about.js"></script>
+<script src="scripts/directives/three.js"></script>
 <!-- endbuild -->
 </body>
 </html>
